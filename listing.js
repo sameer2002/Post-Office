@@ -1,21 +1,25 @@
-const token=`cdbbf224ad1ee7`
+//const token=`cdbbf224ad1ee7`
 window.onload = async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const ip = urlParams.get('ip');
 
-    // Display IP
     document.getElementById('ip-add').innerHTML = `IP Address : <span>${ip}</span>`;
 
-    // Fetch and display location information
-    const response = await fetch(`https://ipinfo.io/${ip}/geo?token=${token}`);
-    const data = await response.json();
-    console.log(data)
-    getdataonui(data);
+    try {
+        const response = await fetch(`https://ipapi.co/${ip}/json/`);
+        const data = await response.json();
+        console.log(data)
+        getdataonui(data);
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error fetching IP information: ' + error.message);
+    }
    
 };
 const info=document.querySelector('.info');
 function getdataonui(data){
-    const [lat, long] = data.loc.split(',');
+    const lat = data.latitude;
+    const long = data.longitude;
     const hostname = data?.hostname || "N/A";
     info.innerHTML=`
     <div class="info-div">
