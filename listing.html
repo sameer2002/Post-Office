@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post-Office</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="location-info">
+            <p id="ip-add"> </p>
+            <div class="info">
+             <!-- user information   -->     
+            </div>
+        </div>
+        <div class="current-location">
+            <h1>Your Current Location</h1>
+            <iframe id="location-map"
+            width="90%" 
+            height="600" 
+            frameborder="0" 
+            style="border:0">
+           </iframe>
+        </div>
+        <div class="more-information">
+            <h1>More Information About You</h1>
+            <p>Time Zone: <span id="time-zone"></span></p>
+            <p>Date And Time: <span id="date-time"></span></p>
+            <p>Pincode: <span id="pincode"></span></p>
+            <p>Message: <span id="num">Number of pincode(s) found:</span> <span id="message"></span></p>
+        </div>
+
+        <div class="post-office">
+            <h1>Post Offices Near You</h1>
+            <div class="search-bar">
+                <div class="inputdesign">
+                    <img src="images/Vector.svg" alt="">
+                    <input type="text" id="post-office-search" placeholder="Search By Name">
+                </div>      
+            </div>
+            <div class="listing-container">
+                <!--showing postal details-->
+            </div>
+        </div>
+        
+    </div>
+  <script src="listing.js"></script>
+    
+</body>
+</html>

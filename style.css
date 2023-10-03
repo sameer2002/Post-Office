@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    font-family: 'Inter', sans-serif;
+}
+main{
+    display: flex;
+    align-items: center;
+    background-color: black;
+    width: 100%;
+}
+
+.container1{
+    width: 50%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title{
+  margin-left: 30px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+.title>p{
+    font-size: 24px;
+    font-weight: 400;
+    color: #B8BCCC;
+    align-self: baseline;
+    line-height: 29px;
+    
+}
+.title>h1{
+    font-size: 36px;
+    font-weight: 700;
+    color: #575A85;
+    align-self: baseline;
+    margin-bottom: 20px;
+}
+.container1>img{
+    width: 50%;
+}
+.container2{
+    width: 50%;
+    height: 100vh;
+    background-color: #575A85;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container2>p{
+    font-size: 36px;
+    font-weight: 700;
+    color: #B8BCCC;
+    margin-bottom: 20px;
+}
+.container2>button{
+    color: #B8BCCC;
+    font-size: 28px;
+    font-weight: 400;
+    background-color: #575A85;
+    border: 2px solid #B8BCCC;
+    border-radius: 10px;
+    padding: 10px 30px ;
+    cursor: pointer;
+}
+.main-container{
+    background-color: black;
+    width: 100%;
+}
+
+.location-info{
+    width: 95%;
+    margin: auto;
+    padding-top: 50px;
+    /* margin-top: 50px; */
+    margin-bottom: 50px;
+    
+}
+.location-info>p ,.info-div>p , .more-information>p{
+    font-size: 34px;
+    font-weight: 700;
+    color: #B8BCCC80;
+}
+.location-info>p{
+    margin-bottom: 20px;
+}
+.location-info>p span , .info-div>p span, .more-information>p span{
+    font-size: 34px;
+    font-weight: 700;
+    color: #B8BCCC;
+}
+.info{
+    display: flex;
+    gap: 3em;
+}
+.info-div{
+    width: 30%;
+}
+.current-location{
+    width: 100%;
+    background-color: #575A85;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.current-location>h1{
+    color: #B8BCCC;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.more-information>h1 , .post-office>h1{
+    color: #B8BCCC;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    align-self: center;
+}
+.more-information{
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    gap: 1em;
+   
+}
+.more-information>p{
+    padding-left: 30px;
+}
+#num{
+    color: #B8BCCC80;
+    font-size: 34px;
+    font-weight: 400;
+}
+.post-office{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+.search-bar{
+    width: 100%;
+}
+.inputdesign{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: 3px solid #575A85;
+    border-radius: 10px;
+    
+
+}
+.inputdesign>img{
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+}
+.inputdesign>input{
+    width: 100%;
+  color: #B8BCCC;
+  font-size: 32px;
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+}
+.inputdesign>input:focus{
+    outline: none;
+}
+.listing-container{
+    padding-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2em;
+}
+.card{
+    background-color: #575A85;
+    width: 45%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: grid;
+    gap: 1em;
+}
+.card>p{
+    color: #B8BCCC;
+    font-size: 34px;
+    font-weight: 700;
+    margin-left: 30px;
+}
