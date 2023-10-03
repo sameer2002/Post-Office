@@ -16,6 +16,15 @@ window.onload = async () => {
     }
    
 };
+function getCurrentTimeForTimezone(timezone) {
+    const date = new Date();
+    const utcDate = new Date(date.toLocaleString('en-US', { timeZone: 'UTC' }));
+    const tzDate = new Date(date.toLocaleString('en-US', { timeZone: timezone }));
+    const offset = (tzDate - utcDate) / (60 * 60 * 1000);
+    const hours = date.getUTCHours() + offset;
+    date.setHours(hours);
+    return date;
+}
 const info=document.querySelector('.info');
 function getdataonui(data){
     const lat = data.latitude;
@@ -38,12 +47,12 @@ function getdataonui(data){
         mapIframe.src = `https://maps.google.com/maps?q=${lat},${long}&z=15&output=embed`;
 
         document.getElementById('time-zone').innerText = data.timezone;
-        const currentDateTime = new Date().toLocaleString("en-US", { timeZone: data.timezone });
-        document.getElementById('date-time').innerText = currentDateTime;
+        const currentTime = getCurrentTimeForTimezone(data.timezone);
+        document.getElementById('date-time').innerText = currentTime;
     
         document.getElementById('pincode').innerText = data.postal;
         if(data.postal) {
-            document.getElementById('message').innerText = "1";
+           
             getPostOffices(data.postal);
         } else {
             document.getElementById('message').innerText = "0";
@@ -57,6 +66,7 @@ async function getPostOffices(pincode) {
     if (data[0].Status === 'Success') {
         const postOffices = data[0].PostOffice;
         console.log(postOffices)
+        document.getElementById('message').innerText = `${postOffices.length}`;
         displayPostOffices(postOffices);
        filterPostOffices(postOffices);
     } else {
